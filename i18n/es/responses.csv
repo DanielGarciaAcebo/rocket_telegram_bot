@@ -1,0 +1,12 @@
+ERROR,Woops. Algo malo ha pasado
+CONFUSED,Perdona no te estoy entendiendo. Podrias enviar otra cosa?
+HELLO,Hola {name}! Vas a jugar?
+HELP2,Help
+HELP,El juego trata de adivinar el frame en el cual el cohete despega (solo tendras que poner un numero ), el cohete  tiene una pista, pulsa encima de jugar para empezar el juego, Buena suerte!!
+PLAY,Jugar
+UP,El despegue se produce mas adelante.
+DOWN,Te has pasado! El despegue se produce antes
+ROCKET,Este es nuestro cohete! En que frame ira hacia las estrellas?
+OKAY,Vale lo he entendido.
+CONGRATS,Enhorabuena has acertado!!
+PLAY_AGAIN,Quieres volver a intentarlo?

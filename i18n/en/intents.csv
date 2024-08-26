@@ -1,0 +1,8 @@
+HELLO,Hello
+HELLO2,Let's play!
+HELP,The game is about guessing the frame in which the rocket takes off (you'll just need to enter a number). The rocket has a clue; click on 'Play' to start the game. Good luck!!
+PLAY,Play
+UP,The takeoff occurs later.
+DOWN,The takeoff occurs earlier.
+ROCKET,This is our rocket
+ROCKET2,In which frame will it head towards the stars?
