@@ -1,0 +1,11 @@
+ERROR,Woops. Something went wrong.
+CONFUSED,It seems that I can't understand what you're saying. Please try another way to say it.
+HELLO,Welcome {name}! Do you want to play?
+HELP,help
+HELP2,The game is about guessing the frame in which the rocket takes off (you'll just need to enter a number). The rocket has a clue; click on 'Play' to start the game. Good luck!!
+PLAY,Play
+UP,The takeoff occurs later.
+DOWN,The takeoff occurs earlier.
+ROCKET,This is our rocket! In which frame will it head towards the stars?
+CONGRATS,Congratulations you got it right!!
+OKAY,It's okay, i understand
