@@ -1,1 +1,3 @@
 bernard
+pysqlite3
+telegram

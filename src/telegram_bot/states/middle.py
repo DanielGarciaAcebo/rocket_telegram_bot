@@ -68,7 +68,6 @@ class MiddleXCheckTrue(TelegramBotState):
 
             if photo_id is not None:
                 context["used_ids"].append(photo_id)
-            print(rocket_lunch, photo_id, context["used_ids"])
             keyboard = tll.InlineKeyboard([
                 [tll.InlineKeyboardCallbackButton(
                     text=t.NEXT_IMAGE_BUTTON,
@@ -100,7 +99,6 @@ class MiddleXCheckFalse(TelegramBotState):
     async def handle(self, context) -> None:
         photo_id = context.get("photo_id")
         rocket_lunch = context["rocket_lunch"]
-        print(rocket_lunch, photo_id)
         keyboard = tll.InlineKeyboard([
             [tll.InlineKeyboardCallbackButton(
                 text=t.NEXT_IMAGE_BUTTON,
