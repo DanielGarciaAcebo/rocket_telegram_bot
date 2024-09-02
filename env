@@ -8,7 +8,7 @@ set -a
 
 DEBUG=yes
 
-BERNARD_SETTINGS_FILE=/home/wildfly/Documents/technicalTest/with_Madrid/back/telegramBot/dev/telegram_bot/src/telegram_bot/settings.py
+BERNARD_SETTINGS_FILE=./src/telegram_bot/settings.py
 BERNARD_BASE_URL=https://127.0.0.1:8666
 WEBVIEW_SECRET_KEY=2kykKxJn1qdaSgVPjnOzyesoT6p_53XFMjebDYdS7aoTn3W72
 
