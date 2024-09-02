@@ -17,7 +17,7 @@ transitions_start = [
         factory=trg.Equal.builder(BotCommand('/help')),
     ),
     Tr(
-        dest=MiddleXGuessRocketLaunch,
+        dest=MiddleXSendImage,
         origin=StartXWelcome,
         factory=trg.Action.builder('play'),
     ),

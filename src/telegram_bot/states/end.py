@@ -1,14 +1,14 @@
 from bernard.platforms.telegram import layers as tll
 from pathlib import Path
-from bernard.i18n import translate
 
 from ..services import (
-translate_txt,
-get_current_datetime
+get_current_datetime,
+send_photo
 )
 MEDIA = Path(__file__).parent.parent.joinpath('media')
 
 from ..baseStates import *
+from ..services import cs
 
 
 class EndXCongrats(TelegramBotState):
@@ -18,21 +18,26 @@ class EndXCongrats(TelegramBotState):
     """
 
     @page_view('/bot/congrats')
-    async def handle(self) -> None:
+    @cs.inject()
+    async def handle(self, context) -> None:
         keyboard = tll.InlineKeyboard([[
             tll.InlineKeyboardCallbackButton(
-                text=translate.PLAY_AGAIN,
+                text=t.PLAY_BUTON_AGAIN,
                 payload={'action': 'again'},
             ),
         ]])
-        url = str(MEDIA / "rockets/R11.txt")
-        text = translate_txt(url)
+        url =  context["url"]
+        conversation_id = self.request.conversation.id
+        send_photo(url, conversation_id)
 
         current_datetime_str = get_current_datetime()
 
+        used_ids = len(context["used_ids"])
+
         self.send(
-            lyrText(text),
-            lyrText(translate.CONGRATS),
+            lyrText(t.CONGRATS),
+            lyrText(t("REJECTS_PHOTOS_LEN", used_ids=used_ids)),
             lyrText(current_datetime_str),
+            lyrText(t.ICON_CONGRATS),
             keyboard
         )

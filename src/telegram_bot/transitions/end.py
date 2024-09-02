@@ -5,12 +5,11 @@ from bernard.engine import (
 
 
 from ..states import *
-from ..services import *
 
 
 transitions_end = [
  Tr(
-        dest=MiddleXGuessRocketLaunch,
+        dest=StartXWelcome,
         origin=EndXCongrats,
         factory=trg.Action.builder('again'),
     )

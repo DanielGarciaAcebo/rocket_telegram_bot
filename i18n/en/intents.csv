@@ -1,8 +1,63 @@
-HELLO,Hello
-HELLO2,Let's play!
-HELP,The game is about guessing the frame in which the rocket takes off (you'll just need to enter a number). The rocket has a clue; click on 'Play' to start the game. Good luck!!
-PLAY,Play
-UP,The takeoff occurs later.
-DOWN,The takeoff occurs earlier.
-ROCKET,This is our rocket
-ROCKET2,In which frame will it head towards the stars?
+ERROR,Woops. Something bad happened
+CONFUSED,Sorry. I don't understand you. Could you send something else?
+
+HELLO,Hello {name}! Are you going to play?
+HELLO,Hi {name}! Are you coming to play some games?
+HELLO,Hi {name}! How's your day going? Want to play?
+
+PLAY_BUTTON_START,Play
+PLAY_BUTON_AGAIN,Do you want to play again?
+
+HELP_BUTTON_START,Help
+HELP_BUTTON,Okay. I got it.
+HELP,The game is about guessing the image in which the rocket takes off. The bot is mainly controlled with buttons. So you won't have any problem. Click Play to start the game. Good luck!!
+
+CONGRATS,Congratulations. You got it right!!
+
+SELECT_IMAGE_BUTTON,Select
+REJECT_IMAGE_BUTTON,Reject
+
+IMAGE_FALSE_SELECT_TRUE,No. You missed it. Bad luck!
+IMAGE_FALSE_SELECT_TRUE,Oh no. You missed it. Try again!!
+IMAGE_FALSE_SELECT_TRUE,You missed it. Next time will be the right one?
+
+IMAGE_CORRECT_SELECT_FALSE,Oh no. That was the correct one!
+IMAGE_CORRECT_SELECT_FALSE,NoOoOo. You missed the chance!
+IMAGE_CORRECT_SELECT_FALSE,Woops. That was a correct one...
+
+IMAGE_FALSE_SELECT_FALSE,Correct. That wasn't it. Let's try again!!
+IMAGE_FALSE_SELECT_FALSE,You got it right. This picture is not correct
+IMAGE_FALSE_SELECT_FALSE,You did well to reject it. It wasn't the correct one!!
+
+TEXT_SEND_IMAGE_MIDDLE,What do you want to do?
+TEXT_SEND_IMAGE_MIDDLE,Choose an option
+TEXT_SEND_IMAGE_MIDDLE,What should you do??
+TEXT_SEND_IMAGE_MIDDLE,This could take a while. Choose wisely!!
+
+NEXT_IMAGE_BUTTON,Next image
+NEXT_IMAGE_BUTTON,See next image
+NEXT_IMAGE_BUTTON,Change image!
+
+IMAGE_CORRECT_SELECT_TRUE_BUTTON,End game
+
+IMAGE_CORRECT_SELECT_TRUE,You got it right. Do you want to see the scores? End the game!
+
+REJECTS_PHOTOS_LEN,You rejected {used_ids}. It's all good. They were incorrect photos!!
+
+ICON_FAIL,🫣
+ICON_FAIL,🫠
+ICON_FAIL,🥲
+ICON_FAIL,😐
+ICON_FAIL,😑
+ICON_FAIL,🤨
+
+ICON_CONGRATS,🎉
+ICON_CONGRATS,🎈
+ICON_CONGRATS,🎊
+ICON_CONGRATS,✨
+ICON_CONGRATS,🍾
+ICON_CONGRATS,😃
+ICON_CONGRATS,😁
+ICON_CONGRATS,😄
+
+ICON_ROCKET,🚀

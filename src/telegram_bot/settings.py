@@ -128,3 +128,8 @@ USERS_READING_BUBBLE_START = 0.0
 # How many words per minute can your users read? This will compute the delay
 # for each message automatically.
 USERS_READING_SPEED = 400
+
+# This is the chat id for fix sen photo
+
+URL = "https://api.telegram.org/bot7497025148:AAGlLk0XYGZhTG87QeRUWrHIycbbZbAqlIA/"
+

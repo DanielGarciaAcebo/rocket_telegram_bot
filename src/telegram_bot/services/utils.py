@@ -1,5 +1,19 @@
 from datetime import datetime
 import os
+import random
+from telegram.ext import (Updater, CommandHandler)
+from fileinput import filename
+import requests
+import json
+from asyncio import Queue
+
+import sqlite3
+
+from .. import settings
+
+from attr import dataclass
+
+
 
 def translate_txt(file_path):
     if not os.path.exists(file_path):
@@ -19,3 +33,52 @@ def get_current_datetime():
     """
     current_datetime = datetime.now()
     return current_datetime.strftime('%Y-%m-%d %H:%M:%S')
+
+
+def send_photo(photoUrl, conversation_id):
+    url = str(settings.URL + "sendPhoto")
+
+    number = conversation_id.split(":")[-1]
+
+    data = {
+        "chat_id": number,
+        "photo": photoUrl
+    }
+
+    response = requests.post(url, data=data)
+
+    if response.status_code != 200:
+        rpn = json.loads(response.text)
+        return rpn
+    else:
+        return True
+
+
+def get_random_id(used_ids):
+    while True:
+        random_id = random.randint(0, 123)
+        if random_id not in used_ids:
+            return random_id
+
+def get_photo_by_id(photo_id):
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(base_dir, "../bd/data_base.db")
+
+    conn = sqlite3.connect(db_path)
+
+    cursor = conn.cursor()
+
+    cursor.execute('''
+            SELECT url, rocket_lunch FROM photos WHERE id = ?
+        ''', (photo_id,))
+
+
+    result = cursor.fetchone()
+
+    conn.close()
+
+    if result:
+        url, rocket_lunch = result
+        return url, rocket_lunch
+    else:
+        return None, None

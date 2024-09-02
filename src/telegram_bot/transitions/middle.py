@@ -1,5 +1,6 @@
 from bernard.engine import (
     Tr,
+    triggers as trg,
 )
 
 
@@ -8,23 +9,28 @@ from ..services import *
 
 transitions_middle = [
     Tr(
-        dest=MiddleXGuessRocketLaunchAgain,
-        origin=MiddleXGuessRocketLaunch,
-        factory=Rocket.builder(is_right=False),
+        dest=MiddleXCheckTrue,
+        origin=MiddleXSendImage,
+        factory=trg.Action.builder('select_image'),
     ),
     Tr(
-        dest=MiddleXGuessRocketLaunchAgain,
-        origin=MiddleXGuessRocketLaunchAgain,
-        factory=Rocket.builder(is_right=False),
+        dest=MiddleXCheckFalse,
+        origin=MiddleXSendImage,
+        factory=trg.Action.builder('reject_image'),
+    ),
+    Tr(
+        dest=MiddleXSendImage,
+        origin=MiddleXCheckFalse,
+        factory=trg.Action.builder('Next'),
+    ),
+    Tr(
+        dest=MiddleXSendImage,
+        origin=MiddleXCheckTrue,
+        factory=trg.Action.builder('Next'),
     ),
     Tr(
         dest=EndXCongrats,
-        origin=MiddleXGuessRocketLaunchAgain,
-        factory=Rocket.builder(is_right=True),
-    ),
-    Tr(
-        dest=EndXCongrats,
-        origin=MiddleXGuessRocketLaunch,
-        factory=Rocket.builder(is_right=True),
+        origin=MiddleXCheckTrue,
+        factory=trg.Action.builder('finish_congrats'),
     ),
 ]
