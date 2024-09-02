@@ -1,3 +1,4 @@
 bernard
 pysqlite3
 telegram
+redis
