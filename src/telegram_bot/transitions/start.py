@@ -5,7 +5,6 @@ from bernard.engine import (
 from bernard.platforms.telegram.layers import BotCommand
 
 from ..states import *
-from ..services import *
 
 transitions_start = [
     Tr(

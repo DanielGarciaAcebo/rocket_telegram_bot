@@ -1,18 +1,12 @@
-from datetime import datetime
+import json
 import os
 import random
-from telegram.ext import (Updater, CommandHandler)
-from fileinput import filename
-import requests
-import json
-from asyncio import Queue
-
 import sqlite3
+from datetime import datetime
+
+import requests
 
 from .. import settings
-
-from attr import dataclass
-
 
 
 def translate_txt(file_path):
