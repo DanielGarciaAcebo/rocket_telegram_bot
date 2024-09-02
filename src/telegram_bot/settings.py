@@ -53,7 +53,7 @@ PLATFORMS = [
         {
             "class": "bernard.platforms.telegram.platform.Telegram",
             "settings": {
-                "token": "7497025148:AAGlLk0XYGZhTG87QeRUWrHIycbbZbAqlIA",
+                "token": "7497025148:AAF57AVkaaT3AtTihtXmGeDjr6-Gc6QPfhg",
             },
         }
     ]
