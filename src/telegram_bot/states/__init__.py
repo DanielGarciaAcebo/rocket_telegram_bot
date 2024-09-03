@@ -10,6 +10,7 @@ __all__ = [
     "MiddleXSendImage",
     "MiddleXCheckTrue",
     "MiddleXCheckFalse",
+    "StartXWelcomeTest",
     "EndXCongrats",
     "StartXHelp"
 ]

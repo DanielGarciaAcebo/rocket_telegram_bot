@@ -16,6 +16,10 @@ transitions_start = [
         factory=trg.Equal.builder(BotCommand('/lets_play')),
     ),
     Tr(
+        dest=StartXWelcomeTest,
+        factory=trg.Equal.builder(BotCommand('/start_text')),
+    ),
+    Tr(
         dest=StartXHelp,
         factory=trg.Equal.builder(BotCommand('/help')),
     ),
@@ -23,6 +27,15 @@ transitions_start = [
         dest=MiddleXSendImage,
         origin=StartXWelcome,
         factory=trg.Action.builder('play'),
+    ),
+    Tr(
+        dest=MiddleXSendImage,
+        origin=StartXWelcomeTest,
+        factory=trg.Action.builder('play'),
+    ),
+    Tr(
+        dest=StartXWelcomeTest,
+        factory=trg.Action.builder('start_text'),
     ),
     Tr(
         dest=StartXHelp,

@@ -12,7 +12,7 @@ HELP_BUTTON_START,Help
 HELP_BUTTON,Okay. I got it.
 HELP,The game is about guessing the image in which the rocket takes off. The bot is mainly controlled with buttons. So you won't have any problem. Click Play to start the game. Good luck!!
 
-CONGRATS,Congratulations. You got it right!!
+CONGRATS,Congratulations. You finish!!
 
 SELECT_IMAGE_BUTTON,Select
 REJECT_IMAGE_BUTTON,Reject
@@ -43,6 +43,15 @@ IMAGE_CORRECT_SELECT_TRUE_BUTTON,End game
 IMAGE_CORRECT_SELECT_TRUE,You got it right. Do you want to see the scores? End the game!
 
 REJECTS_PHOTOS_LEN,You rejected {used_ids}. It's all good. They were incorrect photos!!
+
+TEXT_SEND_IMAGE_MIDDLE_TRUE,Click on select because this image is correct. The base of the rocket is deployed.
+TEXT_SEND_IMAGE_MIDDLE_FALSE,Click on reject. In this image. The rocket is not yet ready to launch. The base is not deployed.
+
+CONGRATS_TEST,You have finished the test. Now the real challenge begins.
+
+PLAY_BUTTON_TEST_BOT,Test bot
+
+TEST_TXT_PRESENTATION,You have started the guided functionality test of the Bot. I will explain how the bot works. Follow the instructions.
 
 ICON_FAIL,🫣
 ICON_FAIL,🫠

@@ -21,12 +21,27 @@ class MiddleXSendImage(TelegramBotState):
     async def handle(self, context) -> None:
         if "used_ids" not in context:
             context["used_ids"] = []
+        if "test" not in context:
+            context["test"] = False
+
+
 
         used_ids = context["used_ids"]
 
         conversation_id = self.request.conversation.id
 
-        photo_id = get_random_id(used_ids)
+        if context["test"]:
+            if len(used_ids) == 0:
+                photo_id = 50
+                txt = t.TEXT_SEND_IMAGE_MIDDLE_FALSE
+            else:
+                photo_id = 88
+                txt = t.TEXT_SEND_IMAGE_MIDDLE_TRUE
+
+        else:
+            photo_id = get_random_id(used_ids)
+            txt = t.TEXT_SEND_IMAGE_MIDDLE
+
         context["photo_id"] = photo_id
 
         url, rocket_lunch = get_photo_by_id(photo_id)
@@ -47,10 +62,9 @@ class MiddleXSendImage(TelegramBotState):
                 payload={'action': 'reject_image'},
             )]
         ])
-
         self.send(
             lyrText(t("TEXT_SEND_ID_MIDDLE", id=photo_id)),
-            lyText(t.TEXT_SEND_IMAGE_MIDDLE),
+            lyText(txt),
             keyboard
         )
 

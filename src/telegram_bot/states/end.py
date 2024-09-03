@@ -26,16 +26,22 @@ class EndXCongrats(TelegramBotState):
                 payload={'action': 'again'},
             ),
         ]])
+
+        if context["test"]:
+            txt = t.CONGRATS_TEST
+        else:
+            txt = t.CONGRATS
+
         url =  context["url"]
         conversation_id = self.request.conversation.id
         send_photo(url, conversation_id)
-
+        context["test"] = False
         current_datetime_str = get_current_datetime()
 
         used_ids = len(context["used_ids"])
 
         self.send(
-            lyrText(t.CONGRATS),
+            lyrText(txt),
             lyrText(t("REJECTS_PHOTOS_LEN", used_ids=used_ids)),
             lyrText(current_datetime_str),
             lyrText(t.ICON_CONGRATS),
