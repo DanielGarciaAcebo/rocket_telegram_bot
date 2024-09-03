@@ -43,7 +43,7 @@ class StartXHelp(TelegramBotState):
     async def handle(self, context) -> None:
         keyboard = tll.InlineKeyboard([
             [tll.InlineKeyboardCallbackButton(
-                text=t.HELP_BUTTON_START,
+                text=t.PLAY_BUTTON_START,
                 payload={'action': 'back_welcome'},
             )]
         ])

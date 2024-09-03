@@ -131,5 +131,5 @@ USERS_READING_SPEED = 400
 
 # This is the chat id for fix sen photo
 
-URL = "https://api.telegram.org/bot7497025148:AAGlLk0XYGZhTG87QeRUWrHIycbbZbAqlIA/"
+URL = "https://api.telegram.org/bot7497025148:AAF57AVkaaT3AtTihtXmGeDjr6-Gc6QPfhg/"
 
