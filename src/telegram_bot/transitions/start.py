@@ -12,6 +12,10 @@ transitions_start = [
         factory=trg.Equal.builder(BotCommand('/start')),
     ),
     Tr(
+        dest=StartXWelcome,
+        factory=trg.Equal.builder(BotCommand('/lets_play')),
+    ),
+    Tr(
         dest=StartXHelp,
         factory=trg.Equal.builder(BotCommand('/help')),
     ),

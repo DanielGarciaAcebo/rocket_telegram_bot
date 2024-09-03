@@ -50,7 +50,7 @@ def send_photo(photoUrl, conversation_id):
 
 def get_random_id(used_ids):
     while True:
-        random_id = random.randint(0, 123)
+        random_id = random.randint(1, 123)
         if random_id not in used_ids:
             return random_id
 

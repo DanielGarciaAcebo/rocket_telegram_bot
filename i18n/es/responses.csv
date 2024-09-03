@@ -34,6 +34,11 @@ TEXT_SEND_IMAGE_MIDDLE,Elige una opción
 TEXT_SEND_IMAGE_MIDDLE,¿Qué es lo que deberías hacer?
 TEXT_SEND_IMAGE_MIDDLE,Esto puede alargarse. ¡Elige con sabiduría!
 
+TEXT_SEND_ID_MIDDLE,Esta es la imagen {id} de 123.
+TEXT_SEND_ID_MIDDLE,La imagen coincide con el número {id} de 123.
+TEXT_SEND_ID_MIDDLE,Vaya... esta imagen es parecida a la del número {id} de 123.
+
+
 NEXT_IMAGE_BUTTON,Siguiente imagen
 NEXT_IMAGE_BUTTON,Ver siguiente imagen
 NEXT_IMAGE_BUTTON,Cambio de imagen

@@ -49,6 +49,7 @@ class MiddleXSendImage(TelegramBotState):
         ])
 
         self.send(
+            lyrText(t("TEXT_SEND_ID_MIDDLE", id=photo_id)),
             lyText(t.TEXT_SEND_IMAGE_MIDDLE),
             keyboard
         )

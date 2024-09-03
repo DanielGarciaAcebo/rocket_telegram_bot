@@ -34,6 +34,11 @@ TEXT_SEND_IMAGE_MIDDLE,Choose an option
 TEXT_SEND_IMAGE_MIDDLE,What should you do??
 TEXT_SEND_IMAGE_MIDDLE,This could take a while. Choose wisely!!
 
+TEXT_SEND_ID_MIDDLE,This is image {id} of 123.
+TEXT_SEND_ID_MIDDLE,The image matches number {id} of 123.
+TEXT_SEND_ID_MIDDLE,Wow... this image is similar to the one with number {id} of 123.
+
+
 NEXT_IMAGE_BUTTON,Next image
 NEXT_IMAGE_BUTTON,See next image
 NEXT_IMAGE_BUTTON,Change image!
