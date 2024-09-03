@@ -24,8 +24,6 @@ class MiddleXSendImage(TelegramBotState):
         if "test" not in context:
             context["test"] = False
 
-
-
         used_ids = context["used_ids"]
 
         conversation_id = self.request.conversation.id
@@ -75,7 +73,6 @@ class MiddleXCheckTrue(TelegramBotState):
     async def handle(self, context) -> None:
         photo_id = context.get("photo_id")
         rocket_lunch = context["rocket_lunch"]
-
 
         if not rocket_lunch == 1:
             if "used_ids" not in context:
