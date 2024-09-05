@@ -8,9 +8,8 @@ __all__ = [
     "TelegramBotState",
     "StartXWelcome",
     "MiddleXSendImage",
-    "MiddleXCheckTrue",
-    "MiddleXCheckFalse",
-    "StartXWelcomeTest",
+    "MiddleXSelectUp",
+    "MiddleXSelectDown",
     "EndXCongrats",
     "StartXHelp"
 ]

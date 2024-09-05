@@ -1,4 +1,4 @@
-ERROR,Woops. Algo malo ha pasado
+ERROR,Woops. Algo malo ha pasado.
 CONFUSED,Perdona. No te estoy entendiendo. ¿Podrías enviar otra cosa?
 
 HELLO,¡Hola {name}! ¿Vas a jugar?
@@ -12,47 +12,44 @@ HELP_BUTTON_START,Ayuda
 HELP_BUTTON,Vale. Lo he entendido.
 HELP,El juego trata de adivinar la imagen en la cual el cohete despega. El bot se controla mayoritariamente con botones. No tendrás problema. Haz clic en Jugar para empezar el juego. ¡Buena suerte!
 
-CONGRATS,¡Enhorabuena. Has acertado!
+CONGRATS,¡Enhorabuena! Has terminado. Arriba puedes ver el momento justo en el cual despega el cohete.
 
-SELECT_IMAGE_BUTTON,Seleccionar
-REJECT_IMAGE_BUTTON,Rechazar
+SELECT_IMAGE_UP_BUTTON,yes
+SELECT_IMAGE_DOWN_BUTTON,no
 
-IMAGE_FALSE_SELECT_TRUE,¡Nooo. Has fallado! ¡Qué mala suerte!
-IMAGE_FALSE_SELECT_TRUE,¡Vaya. Has fallado! ¡Vuelve a intentarlo!
-IMAGE_FALSE_SELECT_TRUE,Has fallado. ¿La próxima será la correcta?
+IMAGE_SELECTED_UP,¿Crees que ya está lanzado? Vale. Concretemos más el rango
+IMAGE_SELECTED_UP,¿Ya está lanzado? Interesante...
+IMAGE_SELECTED_UP,Este es un buen punto de partida. Pondré otro frame. Tenemos que concretar más
 
-IMAGE_CORRECT_SELECT_FALSE,Vaya. ¡Esa era la correcta!
-IMAGE_CORRECT_SELECT_FALSE,¡NoOoOo! ¡Has perdido la oportunidad!
-IMAGE_CORRECT_SELECT_FALSE,Woops. Esa era una correcta...
+IMAGE_SELECTED_DOWN,¿Crees que aún no se ha lanzado? Vale. Concretemos más el rango
+IMAGE_SELECTED_DOWN,¿Aún no se ha lanzado? Interesante...
+IMAGE_SELECTED_DOWN,¿Aún no se ha lanzado? Pondré otro frame. Tenemos que concretar más
 
-IMAGE_FALSE_SELECT_FALSE,Correcto. Esa no era. ¡Probemos otra vez!
-IMAGE_FALSE_SELECT_FALSE,Has acertado. Esta foto no es la correcta
-IMAGE_FALSE_SELECT_FALSE,Has hecho bien en rechazarla. ¡No era la correcta!
+TEXT_SEND_IMAGE_MIDDLE,¿El cohete ha sido lanzado?
+TEXT_SEND_IMAGE_MIDDLE,¿Crees que el cohete se ha lanzado o no?
+TEXT_SEND_IMAGE_MIDDLE,Elige la respuesta. ¿Se ha lanzado el cohete?
+TEXT_SEND_IMAGE_MIDDLE,Recuerda mirar el frame. Tenemos que adivinar el frame en que se lanza el cohete. ¿Crees que se ha lanzado ya?
 
-TEXT_SEND_IMAGE_MIDDLE,¿Qué quieres hacer?
-TEXT_SEND_IMAGE_MIDDLE,Elige una opción
-TEXT_SEND_IMAGE_MIDDLE,¿Qué es lo que deberías hacer?
-TEXT_SEND_IMAGE_MIDDLE,Esto puede alargarse. ¡Elige con sabiduría!
+TEXT_SEND_ID_MIDDLE,Esta es la imagen {id} de 123.
+TEXT_SEND_ID_MIDDLE,La imagen coincide con el número {id} de 123.
+TEXT_SEND_ID_MIDDLE,Vaya... esta imagen es parecida a la del número {id} de 123.
 
 NEXT_IMAGE_BUTTON,Siguiente imagen
 NEXT_IMAGE_BUTTON,Ver siguiente imagen
 NEXT_IMAGE_BUTTON,Cambio de imagen
 
-IMAGE_CORRECT_SELECT_TRUE_BUTTON,Finalizar juego
+SELECT_IMAGE_BUTTON,Finalizar juego
 
-IMAGE_CORRECT_SELECT_TRUE,Has acertado. ¿Quieres ver las puntuaciones? ¡Finaliza el juego!
+IMAGE_SELECT_TRUE,¿Quieres ver las puntuaciones? ¡Finaliza el juego!
 
-REJECTS_PHOTOS_LEN,Has rechazado {used_ids}. Todo está bien. Eran fotos incorrectas.
+SELECTED_PHOTO,Has elegido el frame {photo_id} después de {used_id_len} intentos. ¡Muy bien hecho!
 
-ICON_FAIL,🫣
-ICON_FAIL,🫠
-ICON_FAIL,🥲
-ICON_FAIL,😐
-ICON_FAIL,😑
-ICON_FAIL,🤨
+ICON_INDECISION,🫣
+ICON_INDECISION,😜
+ICON_INDECISION,🤔
+ICON_INDECISION,🤐
 
 ICON_CONGRATS,🎉
-ICON_CONGRATS,🎈
 ICON_CONGRATS,🎊
 ICON_CONGRATS,✨
 ICON_CONGRATS,🍾

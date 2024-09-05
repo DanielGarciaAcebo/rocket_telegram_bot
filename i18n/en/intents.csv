@@ -1,65 +1,55 @@
-ERROR,Woops. Something bad happened
-CONFUSED,Sorry. I don't understand you. Could you send something else?
+ERROR,Woops. Something bad has happened.
+CONFUSED,Sorry. I'm not understanding you. Could you send something else?
 
 HELLO,Hello {name}! Are you going to play?
-HELLO,Hi {name}! Are you coming to play some games?
-HELLO,Hi {name}! How's your day going? Want to play?
+HELLO,Hi {name}! Are you coming to play a few games?
+HELLO,Hi {name}! How's your day going? Do you want to play?
 
 PLAY_BUTTON_START,Play
 PLAY_BUTON_AGAIN,Do you want to play again?
 
 HELP_BUTTON_START,Help
 HELP_BUTTON,Okay. I got it.
-HELP,The game is about guessing the image in which the rocket takes off. The bot is mainly controlled with buttons. So you won't have any problem. Click Play to start the game. Good luck!!
+HELP,The game is about guessing the frame in which the rocket launches. The bot is mainly controlled with buttons. You won't have a problem. Click Play to start the game. Good luck!
 
-CONGRATS,Congratulations. You finish!!
+CONGRATS,Congratulations! You've finished. Above. You can see the exact moment when the rocket launches.
 
-SELECT_IMAGE_BUTTON,Select
-REJECT_IMAGE_BUTTON,Reject
+SELECT_IMAGE_UP_BUTTON,yes
+SELECT_IMAGE_DOWN_BUTTON,no
 
-IMAGE_FALSE_SELECT_TRUE,No. You missed it. Bad luck!
-IMAGE_FALSE_SELECT_TRUE,Oh no. You missed it. Try again!!
-IMAGE_FALSE_SELECT_TRUE,You missed it. Next time will be the right one?
+IMAGE_SELECTED_UP,Do you think it's already launched? Okay. Let's narrow down the range
+IMAGE_SELECTED_UP,Is it already launched? Interesting...
+IMAGE_SELECTED_UP,This is a good starting point. I'll show another frame. We need to narrow it down more
 
-IMAGE_CORRECT_SELECT_FALSE,Oh no. That was the correct one!
-IMAGE_CORRECT_SELECT_FALSE,NoOoOo. You missed the chance!
-IMAGE_CORRECT_SELECT_FALSE,Woops. That was a correct one...
+IMAGE_SELECTED_DOWN,Do you think it hasn't launched yet? Okay. Let's narrow down the range
+IMAGE_SELECTED_DOWN,Hasn't launched yet? Interesting...
+IMAGE_SELECTED_DOWN,Hasn't launched yet? I'll show another frame. We need to narrow it down more
 
-IMAGE_FALSE_SELECT_FALSE,Correct. That wasn't it. Let's try again!!
-IMAGE_FALSE_SELECT_FALSE,You got it right. This picture is not correct
-IMAGE_FALSE_SELECT_FALSE,You did well to reject it. It wasn't the correct one!!
+TEXT_SEND_IMAGE_MIDDLE,Has the rocket launched?
+TEXT_SEND_IMAGE_MIDDLE,Do you think the rocket has launched or not?
+TEXT_SEND_IMAGE_MIDDLE,Choose the answer. Has the rocket launched?
+TEXT_SEND_IMAGE_MIDDLE,Remember to look at the frame. We need to guess the frame where the rocket launches. Do you think it has launched already?
 
-TEXT_SEND_IMAGE_MIDDLE,What do you want to do?
-TEXT_SEND_IMAGE_MIDDLE,Choose an option
-TEXT_SEND_IMAGE_MIDDLE,What should you do??
-TEXT_SEND_IMAGE_MIDDLE,This could take a while. Choose wisely!!
+TEXT_SEND_ID_MIDDLE,This is image {id} of 123.
+TEXT_SEND_ID_MIDDLE,The image matches number {id} of 123.
+TEXT_SEND_ID_MIDDLE,Wow... this image is similar to number {id} of 123.
 
 NEXT_IMAGE_BUTTON,Next image
 NEXT_IMAGE_BUTTON,See next image
-NEXT_IMAGE_BUTTON,Change image!
+NEXT_IMAGE_BUTTON,Change image
 
-IMAGE_CORRECT_SELECT_TRUE_BUTTON,End game
+SELECT_IMAGE_BUTTON,End game
 
-IMAGE_CORRECT_SELECT_TRUE,You got it right. Do you want to see the scores? End the game!
+IMAGE_SELECT_TRUE,Do you want to see the scores? End the game!
 
-REJECTS_PHOTOS_LEN,You rejected {used_ids}. It's all good. They were incorrect photos!!
+SELECTED_PHOTO,You selected frame {photo_id} after {used_id_len} attempts. Well done!
 
-TEXT_SEND_IMAGE_MIDDLE_TRUE,Click on select because this image is correct. The base of the rocket is deployed.
-TEXT_SEND_IMAGE_MIDDLE_FALSE,Click on reject. In this image, the rocket is not yet ready to launch, the base is not deployed.
-
-CONGRATS_TEST,You have finished the test. Now the real challenge begins.
-
-PLAY_BUTTON_TEST_BOT,Test bot
-
-ICON_FAIL,🫣
-ICON_FAIL,🫠
-ICON_FAIL,🥲
-ICON_FAIL,😐
-ICON_FAIL,😑
-ICON_FAIL,🤨
+ICON_INDECISION,🫣
+ICON_INDECISION,😜
+ICON_INDECISION,🤔
+ICON_INDECISION,🤐
 
 ICON_CONGRATS,🎉
-ICON_CONGRATS,🎈
 ICON_CONGRATS,🎊
 ICON_CONGRATS,✨
 ICON_CONGRATS,🍾

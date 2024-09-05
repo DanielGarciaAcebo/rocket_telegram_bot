@@ -48,11 +48,16 @@ def send_photo(photoUrl, conversation_id):
         return True
 
 
-def get_random_id(used_ids):
-    while True:
-        random_id = random.randint(1, 123)
-        if random_id not in used_ids:
-            return random_id
+
+def get_random_id(lower_limit=0, upper_limit=0):
+    if lower_limit == 0:
+        lower_limit = 1
+    if upper_limit == 0:
+        upper_limit = 123
+
+    random_id = random.randint(lower_limit, upper_limit)
+    return random_id
+
 
 def get_photo_by_id(photo_id):
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -66,9 +71,7 @@ def get_photo_by_id(photo_id):
             SELECT url, rocket_lunch FROM photos WHERE id = ?
         ''', (photo_id,))
 
-
     result = cursor.fetchone()
-
     conn.close()
 
     if result:
@@ -76,3 +79,25 @@ def get_photo_by_id(photo_id):
         return url, rocket_lunch
     else:
         return None, None
+
+
+def get_photo_by_rocket_lunch():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(base_dir, "../bd/data_base.db")
+
+    conn = sqlite3.connect(db_path)
+
+    cursor = conn.cursor()
+
+    cursor.execute('''
+            SELECT id FROM photos WHERE rocket_lunch = 1
+        ''')
+
+    result = cursor.fetchall()
+
+    conn.close()
+
+    if result:
+        return [row[0] for row in result]
+    else:
+        return []

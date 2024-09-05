@@ -8,7 +8,7 @@ send_photo
 MEDIA = Path(__file__).parent.parent.joinpath('media')
 
 from ..baseStates import *
-from ..services import cs
+from ..services import *
 
 
 class EndXCongrats(TelegramBotState):
@@ -26,24 +26,16 @@ class EndXCongrats(TelegramBotState):
                 payload={'action': 'again'},
             ),
         ]])
-
-        if context["test"]:
-            txt = t.CONGRATS_TEST
-        else:
-            txt = t.CONGRATS
-
         url =  context["url"]
         conversation_id = self.request.conversation.id
         send_photo(url, conversation_id)
-        context["test"] = False
-        current_datetime_str = get_current_datetime()
 
-        used_ids = len(context["used_ids"])
+        photo_id = context["photo_id"]
+        used_id_len = len(context["used_id"])
 
         self.send(
-            lyrText(txt),
-            lyrText(t("REJECTS_PHOTOS_LEN", used_ids=used_ids)),
-            lyrText(current_datetime_str),
+            lyrText(t.CONGRATS),
+            lyrText(t("SELECTED_PHOTO", photo_id=photo_id, used_id_len=used_id_len)),
             lyrText(t.ICON_CONGRATS),
             keyboard
         )

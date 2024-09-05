@@ -7,28 +7,28 @@ from ..states import *
 
 transitions_middle = [
     Tr(
-        dest=MiddleXCheckTrue,
+        dest=MiddleXSelectUp,
         origin=MiddleXSendImage,
         factory=trg.Action.builder('select_image'),
     ),
     Tr(
-        dest=MiddleXCheckFalse,
+        dest=MiddleXSelectDown,
         origin=MiddleXSendImage,
         factory=trg.Action.builder('reject_image'),
     ),
     Tr(
         dest=MiddleXSendImage,
-        origin=MiddleXCheckFalse,
-        factory=trg.Action.builder('Next'),
+        origin=MiddleXSelectUp,
+        factory=trg.Action.builder('next'),
     ),
     Tr(
         dest=MiddleXSendImage,
-        origin=MiddleXCheckTrue,
-        factory=trg.Action.builder('Next'),
+        origin=MiddleXSelectDown,
+        factory=trg.Action.builder('next'),
     ),
     Tr(
         dest=EndXCongrats,
-        origin=MiddleXCheckTrue,
+        origin=MiddleXSendImage,
         factory=trg.Action.builder('finish_congrats'),
     ),
 ]

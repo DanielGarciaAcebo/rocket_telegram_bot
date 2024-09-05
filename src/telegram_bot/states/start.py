@@ -5,16 +5,14 @@ from ..services import *
 from ..baseStates import *
 
 class StartXWelcome(TelegramBotState):
-    """
-    Welcome the user with inline keyboard options.
-    """
 
     @page_view('/bot/welcome')
     @cs.inject()
     async def handle(self, context) -> None:
         name = await self.request.user.get_friendly_name()
-        context["used_ids"] = []
-        context["test"] = False
+        context["lower_limit"] = 1
+        context["upper_limit"] = 123
+        context["used_id"]= []
 
         keyboard = tll.InlineKeyboard([
             [tll.InlineKeyboardCallbackButton(
@@ -34,36 +32,8 @@ class StartXWelcome(TelegramBotState):
             keyboard
         )
 
-class StartXWelcomeTest(TelegramBotState):
-    """
-    Welcome the user with inline keyboard options.
-    """
-
-    @page_view('/bot/welcome-test')
-    @cs.inject()
-    async def handle(self, context) -> None:
-        name = await self.request.user.get_friendly_name()
-        context["used_ids"] = []
-        context["test"] = True
-
-        keyboard = tll.InlineKeyboard([
-            [tll.InlineKeyboardCallbackButton(
-                text=t.PLAY_BUTTON_START,
-                payload={'action': 'play'},
-            )],
-        ])
-
-        self.send(
-            lyrText(t.TEST_TXT_PRESENTATION),
-            lyrText(t.ICON_ROCKET),
-            keyboard
-        )
 
 class StartXHelp(TelegramBotState):
-    """
-    Welcome the user with inline keyboard options.
-    """
-
     @page_view('/bot/welcome')
     @cs.inject()
     async def handle(self, context) -> None:
@@ -71,10 +41,6 @@ class StartXHelp(TelegramBotState):
             [tll.InlineKeyboardCallbackButton(
                 text=t.PLAY_BUTTON_START,
                 payload={'action': 'back_welcome'},
-            )],
-            [tll.InlineKeyboardCallbackButton(
-                text=t.PLAY_BUTTON_TEST_BOT,
-                payload={'action': 'start_text'},
             )],
         ])
 

@@ -10,5 +10,6 @@ __all__ = [
     "get_current_datetime",
     "send_photo",
     "get_random_id",
-    "get_photo_by_id"
+    "get_photo_by_id",
+    "get_photo_by_rocket_lunch"
 ]

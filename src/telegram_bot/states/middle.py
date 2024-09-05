@@ -19,122 +19,85 @@ class MiddleXSendImage(TelegramBotState):
     @page_view("/bot/guess-rocket")
     @cs.inject()
     async def handle(self, context) -> None:
-        if "used_ids" not in context:
-            context["used_ids"] = []
-        if "test" not in context:
-            context["test"] = False
-
-        used_ids = context["used_ids"]
-
         conversation_id = self.request.conversation.id
+        if context["upper_limit"] - context["lower_limit"] > 3:
+            photo_id = get_random_id(context["lower_limit"], context["upper_limit"])
+            context["photo_id"] = photo_id
+            context["used_id"].append(photo_id)
 
-        if context["test"]:
-            if len(used_ids) == 0:
-                photo_id = 50
-                txt = t.TEXT_SEND_IMAGE_MIDDLE_FALSE
-            else:
-                photo_id = 88
-                txt = t.TEXT_SEND_IMAGE_MIDDLE_TRUE
+            url, rocket_lunch = get_photo_by_id(photo_id)
+            context["rocket_lunch"] = rocket_lunch
+            context["url"] = url
 
-        else:
-            photo_id = get_random_id(used_ids)
-            txt = t.TEXT_SEND_IMAGE_MIDDLE
+            send_photo(url, conversation_id)
 
-        context["photo_id"] = photo_id
-
-        url, rocket_lunch = get_photo_by_id(photo_id)
-
-        context["rocket_lunch"] = rocket_lunch
-        context["url"] = url
-
-        send_photo(url, conversation_id)
-
-        keyboard = tll.InlineKeyboard([
-            [tll.InlineKeyboardCallbackButton(
-                text=t.SELECT_IMAGE_BUTTON,
-                payload={'action': 'select_image'},
-            )],
-
-            [tll.InlineKeyboardCallbackButton(
-                text=t.REJECT_IMAGE_BUTTON,
-                payload={'action': 'reject_image'},
-            )]
-        ])
-        self.send(
-            lyrText(t("TEXT_SEND_ID_MIDDLE", id=photo_id)),
-            lyText(txt),
-            keyboard
-        )
-
-class MiddleXCheckTrue(TelegramBotState):
-
-    @page_view("/bot/guess-rocket-true")
-    @cs.inject()
-    async def handle(self, context) -> None:
-        photo_id = context.get("photo_id")
-        rocket_lunch = context["rocket_lunch"]
-
-        if not rocket_lunch == 1:
-            if "used_ids" not in context:
-                context["used_ids"] = []
-
-            if photo_id is not None:
-                context["used_ids"].append(photo_id)
             keyboard = tll.InlineKeyboard([
                 [tll.InlineKeyboardCallbackButton(
-                    text=t.NEXT_IMAGE_BUTTON,
-                    payload={'action': 'Next'},
+                    text=t.SELECT_IMAGE_UP_BUTTON,
+                    payload={'action': 'select_image'},
                 )],
+
+                [tll.InlineKeyboardCallbackButton(
+                    text=t.SELECT_IMAGE_DOWN_BUTTON,
+                    payload={'action': 'reject_image'},
+                )]
             ])
             self.send(
-                lyText(t.IMAGE_FALSE_SELECT_TRUE),
-                lyText(t.ICON_FAIL),
+                lyrText(t("TEXT_SEND_ID_MIDDLE", id=photo_id)),
+                lyText(t.TEXT_SEND_IMAGE_MIDDLE),
+                lyText(t.ICON_INDECISION),
                 keyboard
             )
-            return
-        keyboard = tll.InlineKeyboard([
-            [tll.InlineKeyboardCallbackButton(
-                text=t.IMAGE_CORRECT_SELECT_TRUE_BUTTON,
-                payload={'action': 'finish_congrats'},
-            )],
-        ])
-        self.send(
-            lyText(t.IMAGE_CORRECT_SELECT_TRUE),
-            keyboard
-        )
+        else:
+            keyboard = tll.InlineKeyboard([
+                [tll.InlineKeyboardCallbackButton(
+                    text=t.SELECT_IMAGE_BUTTON,
+                    payload={'action': 'finish_congrats'},
+                )],
+            ])
+            used_id_len =len(context["used_id"])
+            self.send(
+                lyrText(t("SELECTED_PHOTO", photo_id=context["photo_id"],used_id_len=used_id_len)),
+                lyText(t.IMAGE_SELECT_TRUE),
+                lyrText(t.ICON_CONGRATS),
+                keyboard
+            )
 
 
-class MiddleXCheckFalse(TelegramBotState):
-
-    @page_view("/bot/guess-rocket-false")
+class MiddleXSelectUp(TelegramBotState):
+    @page_view("/bot/guess-rocket-false-up")
     @cs.inject()
     async def handle(self, context) -> None:
-        photo_id = context.get("photo_id")
-        rocket_lunch = context["rocket_lunch"]
+        context["upper_limit"]= context.get("photo_id")
+
         keyboard = tll.InlineKeyboard([
             [tll.InlineKeyboardCallbackButton(
                 text=t.NEXT_IMAGE_BUTTON,
-                payload={'action': 'Next'},
+                payload={'action': 'next'},
             )],
         ])
-        if rocket_lunch == 1:
 
-            self.send(
-                lyText(t.IMAGE_CORRECT_SELECT_FALSE),
-                lyText(t.ICON_FAIL),
-                keyboard
-            )
-            pass
-        else:
-            if "used_ids" not in context:
-                context["used_ids"] = []
+        self.send(
+            lyText(t.IMAGE_SELECTED_UP),
+            lyrText(t.ICON_INDECISION),
+            keyboard
+        )
 
-            if photo_id is not None:
-                context["used_ids"].append(photo_id)
 
-            self.send(
-                lyText(t.IMAGE_FALSE_SELECT_FALSE),
-                lyText(t.ICON_CONGRATS),
-                keyboard,
-            )
-            return
+class MiddleXSelectDown(TelegramBotState):
+    @page_view("/bot/guess-rocket-false-down")
+    @cs.inject()
+    async def handle(self, context) -> None:
+        context["lower_limit"] = context.get("photo_id")
+
+        keyboard = tll.InlineKeyboard([
+            [tll.InlineKeyboardCallbackButton(
+                text=t.NEXT_IMAGE_BUTTON,
+                payload={'action': 'next'},
+            )],
+        ])
+        self.send(
+            lyText(t.IMAGE_SELECTED_DOWN),
+            lyrText(t.ICON_INDECISION),
+            keyboard
+        )
