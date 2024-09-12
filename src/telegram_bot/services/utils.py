@@ -51,18 +51,12 @@ def send_photo(photoUrl, conversation_id):
 
 def get_random_id(lower_limit=1, upper_limit=123):
 
-
     while lower_limit < upper_limit:
         mid = (lower_limit + upper_limit) // 2
-
         if random.choice([True, False]):
             lower_limit = mid + 1
-            print("ha entrado en lower")
         else:
             upper_limit = mid
-            print("ha entrado en upper")
-
-    print(lower_limit, upper_limit)
 
     return lower_limit
 
