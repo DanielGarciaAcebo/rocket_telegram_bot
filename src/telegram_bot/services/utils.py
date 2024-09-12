@@ -50,15 +50,14 @@ def send_photo(photoUrl, conversation_id):
 
 
 def get_random_id(lower_limit=1, upper_limit=123):
-
+    mid = 0
     while lower_limit < upper_limit:
         mid = (lower_limit + upper_limit) // 2
         if random.choice([True, False]):
             lower_limit = mid + 1
         else:
             upper_limit = mid
-
-    return lower_limit
+    return mid
 
 
 def get_photo_by_id(photo_id):
