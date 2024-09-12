@@ -1,8 +1,60 @@
-HELLO,Hello
-HELLO2,Let's play!
-HELP,The game is about guessing the frame in which the rocket takes off (you'll just need to enter a number). The rocket has a clue; click on 'Play' to start the game. Good luck!!
-PLAY,Play
-UP,The takeoff occurs later.
-DOWN,The takeoff occurs earlier.
-ROCKET,This is our rocket
-ROCKET2,In which frame will it head towards the stars?
+ERROR,Woops. Something bad has happened.
+CONFUSED,Sorry. I'm not understanding you. Could you send something else?
+
+HELLO,Hello {name}! Are you going to play?
+HELLO,Hi {name}! Are you coming to play a few games?
+HELLO,Hi {name}! How's your day going? Do you want to play?
+
+PLAY_BUTTON_START,Play
+PLAY_BUTON_AGAIN,Do you want to play again?
+
+HELP_BUTTON_START,Help
+HELP_BUTTON,Okay. I got it.
+HELP,The game is about guessing the frame in which the rocket launches. The bot is mainly controlled with buttons. You won't have a problem. Click Play to start the game. Good luck!
+
+CONGRATS,Congratulations! You've finished. Above. You can see the exact moment when the rocket launches.
+
+SELECT_IMAGE_UP_BUTTON,yes
+SELECT_IMAGE_DOWN_BUTTON,no
+
+IMAGE_SELECTED_UP,Do you think it's already launched? Okay. Let's narrow down the range
+IMAGE_SELECTED_UP,Is it already launched? Interesting...
+IMAGE_SELECTED_UP,This is a good starting point. I'll show another frame. We need to narrow it down more
+
+IMAGE_SELECTED_DOWN,Do you think it hasn't launched yet? Okay. Let's narrow down the range
+IMAGE_SELECTED_DOWN,Hasn't launched yet? Interesting...
+IMAGE_SELECTED_DOWN,Hasn't launched yet? I'll show another frame. We need to narrow it down more
+
+TEXT_SEND_IMAGE_MIDDLE,Has the rocket launched?
+TEXT_SEND_IMAGE_MIDDLE,Do you think the rocket has launched or not?
+TEXT_SEND_IMAGE_MIDDLE,Choose the answer. Has the rocket launched?
+TEXT_SEND_IMAGE_MIDDLE,Remember to look at the frame. We need to guess the frame where the rocket launches. Do you think it has launched already?
+
+TEXT_SEND_ID_MIDDLE,This is image {id} of 123.
+TEXT_SEND_ID_MIDDLE,The image matches number {id} of 123.
+TEXT_SEND_ID_MIDDLE,Wow... this image is similar to number {id} of 123.
+
+NEXT_IMAGE_BUTTON,Next image
+NEXT_IMAGE_BUTTON,See next image
+NEXT_IMAGE_BUTTON,Change image
+
+SELECT_IMAGE_BUTTON,End game
+
+IMAGE_SELECT_TRUE,Do you want to see the scores? End the game!
+
+SELECTED_PHOTO,You selected frame {photo_id} after {used_id_len} attempts. Well done!
+
+ICON_INDECISION,🫣
+ICON_INDECISION,😜
+ICON_INDECISION,🤔
+ICON_INDECISION,🤐
+
+ICON_CONGRATS,🎉
+ICON_CONGRATS,🎊
+ICON_CONGRATS,✨
+ICON_CONGRATS,🍾
+ICON_CONGRATS,😃
+ICON_CONGRATS,😁
+ICON_CONGRATS,😄
+
+ICON_ROCKET,🚀

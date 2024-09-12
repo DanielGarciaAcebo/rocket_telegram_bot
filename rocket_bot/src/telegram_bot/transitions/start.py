@@ -5,7 +5,6 @@ from bernard.engine import (
 from bernard.platforms.telegram.layers import BotCommand
 
 from ..states import *
-from ..services import *
 
 transitions_start = [
     Tr(
@@ -13,11 +12,15 @@ transitions_start = [
         factory=trg.Equal.builder(BotCommand('/start')),
     ),
     Tr(
+        dest=StartXWelcome,
+        factory=trg.Equal.builder(BotCommand('/lets_play')),
+    ),
+    Tr(
         dest=StartXHelp,
         factory=trg.Equal.builder(BotCommand('/help')),
     ),
     Tr(
-        dest=MiddleXGuessRocketLaunch,
+        dest=MiddleXSendImage,
         origin=StartXWelcome,
         factory=trg.Action.builder('play'),
     ),

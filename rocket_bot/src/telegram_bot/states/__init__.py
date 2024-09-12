@@ -7,8 +7,9 @@ from .end import *
 __all__ = [
     "TelegramBotState",
     "StartXWelcome",
-    "MiddleXGuessRocketLaunch",
-    "MiddleXGuessRocketLaunchAgain",
+    "MiddleXSendImage",
+    "MiddleXSelectUp",
+    "MiddleXSelectDown",
     "EndXCongrats",
     "StartXHelp"
 ]
