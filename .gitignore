@@ -2,6 +2,7 @@
 *.pyc
 *.un~
 *.swp
+env
 MANIFEST
 /dist
 *.log

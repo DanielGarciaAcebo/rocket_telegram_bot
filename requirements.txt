@@ -2,3 +2,4 @@ bernard
 pysqlite3
 telegram
 redis
+python-dotenv
